@@ -13,7 +13,10 @@ import numpy as np
 import pandas as pd
 from pgmpy.factors.discrete.CPD import TabularCPD
 from pgmpy.sampling import BayesianModelSampling
-from pydantic import validate_arguments
+try:
+    from pydantic import validate_arguments
+except Exception:
+    from pydantic.v1 import validate_arguments
 from scipy.optimize import fsolve
 from sklearn.cluster import KMeans
 from sklearn.metrics import normalized_mutual_info_score

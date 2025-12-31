@@ -4,7 +4,11 @@ from typing import Any, Generator, List, Tuple
 # third party
 import numpy as np
 import pandas as pd
-from pydantic import BaseModel, field_validator, validate_arguments
+from pydantic import BaseModel, field_validator
+try:
+    from pydantic import validate_arguments
+except Exception:
+    from pydantic.v1 import validate_arguments
 
 # synthcity absolute
 import synthcity.logger as log

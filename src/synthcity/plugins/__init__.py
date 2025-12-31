@@ -3,7 +3,10 @@ import glob
 from os.path import basename, dirname, isfile, join
 
 # third party
-from pydantic import validate_arguments
+try:
+    from pydantic import validate_arguments
+except Exception:
+    from pydantic.v1 import validate_arguments
 
 # synthcity absolute
 from synthcity.plugins.core.plugin import Plugin, PluginLoader  # noqa: F401,E402

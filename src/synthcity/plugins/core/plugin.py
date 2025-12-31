@@ -9,7 +9,11 @@ from typing import Any, Callable, Dict, Generator, List, Optional, Type, Union
 
 # third party
 import pandas as pd
-from pydantic import ConfigDict, validate_arguments
+from pydantic import ConfigDict
+try:
+    from pydantic import validate_arguments
+except Exception:
+    from pydantic.v1 import validate_arguments
 
 # synthcity absolute
 import synthcity.logger as log
